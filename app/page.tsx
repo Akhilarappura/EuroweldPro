@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -37,6 +39,8 @@ export default function EuroWeldProWebsite() {
               <HardHat className="h-8 w-8 text-orange-500" />
               <h1 className="text-2xl font-bold">EuroWeld Pro</h1>
             </div>
+
+            {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-6">
               <a href="#home" className="hover:text-orange-500 transition-colors">
                 Home
@@ -51,6 +55,40 @@ export default function EuroWeldProWebsite() {
                 For Candidates
               </a>
               <a href="#contact" className="hover:text-orange-500 transition-colors">
+                Contact
+              </a>
+            </nav>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden p-2"
+              onClick={() => {
+                const mobileMenu = document.getElementById("mobile-menu")
+                mobileMenu?.classList.toggle("hidden")
+              }}
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Mobile Navigation Menu */}
+          <div id="mobile-menu" className="hidden md:hidden mt-4 pb-4">
+            <nav className="flex flex-col space-y-3">
+              <a href="#home" className="hover:text-orange-500 transition-colors py-2 border-b border-slate-700">
+                Home
+              </a>
+              <a href="#about" className="hover:text-orange-500 transition-colors py-2 border-b border-slate-700">
+                About
+              </a>
+              <a href="#services" className="hover:text-orange-500 transition-colors py-2 border-b border-slate-700">
+                Services
+              </a>
+              <a href="#candidates" className="hover:text-orange-500 transition-colors py-2 border-b border-slate-700">
+                For Candidates
+              </a>
+              <a href="#contact" className="hover:text-orange-500 transition-colors py-2">
                 Contact
               </a>
             </nav>
@@ -70,6 +108,12 @@ export default function EuroWeldProWebsite() {
               </h1>
               <p className="text-xl text-gray-300">
                 Specializing in Boiler Construction, Oil & Gas, Food Industry, Shipbuilding, and Fertilizer Sectors.
+              </p>
+              <p className="text-lg text-gray-400 leading-relaxed">
+                We are a premier manpower supply company dedicated to providing highly skilled welders and fabricators
+                to industries throughout Europe. Our expertise ensures your projects in critical sectors like Boiler
+                Construction, Oil & Gas, Food Industry, Shipbuilding, and Fertilizer are completed efficiently and to
+                the highest standards. We focus on timely and effective workforce solutions to boost your productivity.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-4 my-8">
@@ -135,7 +179,7 @@ export default function EuroWeldProWebsite() {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <Image
-                        src="/pic.webp"
+           src="/pic.webp"
                 alt="Industrial facility"
                 width={600}
                 height={500}
@@ -201,7 +245,7 @@ export default function EuroWeldProWebsite() {
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
                 <Zap className="h-12 w-12 text-orange-500 mx-auto mb-2" />
-                <CardTitle className="text-slate-800">Client-Focused</CardTitle>
+                <CardTitle className="text-slate-800">Client-Centric Approach</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">Dedicated to understanding unique client demands</p>
@@ -263,15 +307,15 @@ export default function EuroWeldProWebsite() {
                 <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span>Blueprint reading and interpretation</span>
+                    <span> Skilled in reading and interpreting technical drawings.</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span>Cutting, shaping, and assembling metal structures</span>
+                    <span>Proficient in cutting, shaping, and assembling metal structures</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span>Proficient in fabrication machinery operation</span>
+                    <span>Experienced in operating various fabrication machinery</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
@@ -333,6 +377,8 @@ export default function EuroWeldProWebsite() {
               <p className="text-xl text-gray-300 mb-8">
                 Opportunities for skilled welders and fabricators seeking rewarding careers across Europe
               </p>
+ 
+  <h3 className="text-2xl font-bold text-white mb-6">Why Work With Us?</h3>
 
               <div className="space-y-4 mb-8">
                 <div className="flex items-center space-x-3">
@@ -360,7 +406,7 @@ export default function EuroWeldProWebsite() {
 
             <div>
               <Image
-                       src="/pic.webp"
+               src="/pic.webp"
                 alt="Professional team"
                 width={600}
                 height={500}
