@@ -439,7 +439,16 @@ export default function EuroWeldProWebsite() {
                     className="w-full h-64 md:h-80 lg:h-96 object-cover"
                   />
                 </div>
+                
+                {/* Slide 2 - Video */}
                 <div className="min-w-full">
+                  <video className="w-full h-64 md:h-80 lg:h-96 object-cover" controls muted loop poster="/eagle.jpg">
+                    <source src="/video1.mp4" type="video/mp4" />
+                    <source src="/video1.mp4" type="video/webm" />
+             
+                  </video>
+                </div>
+                  <div className="min-w-full">
                   <Image
                        src="/pic2.jpg"
                     alt="Oil and gas pipeline welding"
@@ -448,6 +457,14 @@ export default function EuroWeldProWebsite() {
                     className="w-full h-64 md:h-80 lg:h-96 object-cover"
                   />
                 </div>
+                   <div className="min-w-full">
+                  <video className="w-full h-64 md:h-80 lg:h-96 object-cover" controls muted loop poster="/eagle.jpg">
+                    <source src="/video2.mp4" type="video/mp4" />
+                    <source src="/video2.mp4" type="video/webm" />
+             
+                  </video>
+                </div>
+                
                 <div className="min-w-full">
                   <Image
                     src="/pic3.jpg"
@@ -457,6 +474,14 @@ export default function EuroWeldProWebsite() {
                     className="w-full h-64 md:h-80 lg:h-96 object-cover"
                   />
                 </div>
+                   <div className="min-w-full">
+                  <video className="w-full h-64 md:h-80 lg:h-96 object-cover" controls muted loop poster="/eagle.jpg">
+                    <source src="/video3.mp4" type="video/mp4" />
+                    <source src="/video3.mp4" type="video/webm" />
+             
+                  </video>
+                </div>
+                
                 <div className="min-w-full">
                   <Image
                     src="/pic4.jpg"
@@ -466,7 +491,15 @@ export default function EuroWeldProWebsite() {
                     className="w-full h-64 md:h-80 lg:h-96 object-cover"
                   />
                 </div>
-                <div className="min-w-full">
+
+                   <div className="min-w-full">
+                  <video className="w-full h-64 md:h-80 lg:h-96 object-cover" controls muted loop poster="/eagle.jpg">
+                    <source src="/video4.mp4" type="video/mp4" />
+                    <source src="/video4.mp4" type="video/webm" />
+             
+                  </video>
+                </div>
+ <div className="min-w-full">
                   <Image
                     src="/pic5.jpg"
                     alt="Fertilizer plant construction"
@@ -475,6 +508,24 @@ export default function EuroWeldProWebsite() {
                     className="w-full h-64 md:h-80 lg:h-96 object-cover"
                   />
                 </div>
+
+                   <div className="min-w-full">
+                  <video className="w-full h-64 md:h-80 lg:h-96 object-cover" controls muted loop poster="/eagle.jpg">
+                    <source src="/video5.mp4" type="video/mp4" />
+                    <source src="/video5.mp4" type="video/webm" />
+             
+                  </video>
+                </div>
+                   <div className="min-w-full">
+                  <video className="w-full h-64 md:h-80 lg:h-96 object-cover" controls muted loop poster="/eagle.jpg">
+                    <source src="/video6.mp4" type="video/mp4" />
+                    <source src="/video6.mp4" type="video/webm" />
+             
+                  </video>
+                </div>
+            
+              
+               
                  <div className="min-w-full">
                   <Image
                     src="/pic6.jpg"
