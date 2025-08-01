@@ -82,11 +82,11 @@ export default function EuroWeldProWebsite() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-slate-800 text-white shadow-lg sticky top-0 z-50">
+        <header className="bg-slate-800 text-white shadow-lg sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <HardHat className="h-8 w-8 text-orange-500" />
+            <div className="flex items-center space-x-3">
+              <Image src="/eagle.jpg" alt="EuroWeld Pro Logo" width={50} height={50} className="rounded-lg" />
               <h1 className="text-2xl font-bold">EuroWeld Pro</h1>
             </div>
 
@@ -625,9 +625,9 @@ export default function EuroWeldProWebsite() {
                 </div>
               </div>
 
-              <Button size="lg" className="bg-orange-600 hover:bg-orange-700">
+              {/* <Button size="lg" className="bg-orange-600 hover:bg-orange-700">
                 Submit Your CV Now
-              </Button>
+              </Button> */}
             </div>
 
             <div>
