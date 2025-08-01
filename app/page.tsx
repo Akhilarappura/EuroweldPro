@@ -147,26 +147,29 @@ export default function EuroWeldProWebsite() {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="relative bg-gradient-to-r from-slate-800 to-slate-700 text-white py-20">
+        <section
+        id="home"
+        className="relative bg-gradient-to-r from-slate-800 to-slate-700 text-white min-h-screen flex items-center"
+      >
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
+          <div className="grid lg:grid-cols-2 gap-8 items-center min-h-screen py-8">
+            <div className="space-y-4">
+              <h1 className="text-3xl lg:text-5xl font-bold leading-tight">
                 Your Trusted Partner for Expert <span className="text-orange-500">Welders & Fabricators</span> Across
                 Europe
               </h1>
-              <p className="text-xl text-gray-300">
+              <p className="text-lg text-gray-300">
                 Specializing in Boiler Construction, Oil & Gas, Food Industry, Shipbuilding, and Fertilizer Sectors.
               </p>
-              <p className="text-lg text-gray-400 leading-relaxed">
+              <p className="text-base text-gray-400 leading-relaxed">
                 We are a premier manpower supply company dedicated to providing highly skilled welders and fabricators
                 to industries throughout Europe. Our expertise ensures your projects in critical sectors like Boiler
                 Construction, Oil & Gas, Food Industry, Shipbuilding, and Fertilizer are completed efficiently and to
                 the highest standards. We focus on timely and effective workforce solutions to boost your productivity.
               </p>
 
-              <div className="grid sm:grid-cols-2 gap-4 my-8">
+              <div className="grid sm:grid-cols-2 gap-3 my-6">
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="h-6 w-6 text-orange-500 flex-shrink-0" />
                   <span>Skilled Workforce</span>
@@ -189,7 +192,7 @@ export default function EuroWeldProWebsite() {
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white">
                   <a href="#contact">Contact Us Today</a>
                 </Button>
