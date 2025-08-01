@@ -27,8 +27,58 @@ import {
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect } from "react"
+
+function updateDots(activeIndex: number) {
+  const dots = document.querySelectorAll(".slider-dot")
+  dots.forEach((dot, index) => {
+    if (index === activeIndex) {
+      dot.className = "slider-dot w-3 h-3 rounded-full transition-colors bg-orange-500"
+    } else {
+      dot.className = "slider-dot w-3 h-3 rounded-full transition-colors bg-white/50 hover:bg-white/70"
+    }
+  })
+}
+
+let autoPlayInterval: NodeJS.Timeout
+
+function startAutoPlay() {
+  autoPlayInterval = setInterval(() => {
+    const slider = document.getElementById("slider")
+    if (slider) {
+      const currentIndex = Number.parseInt(slider.dataset.currentIndex || "0")
+      const totalSlides = 5
+      const newIndex = (currentIndex + 1) % totalSlides
+      slider.style.transform = `translateX(-${newIndex * 100}%)`
+      slider.dataset.currentIndex = newIndex.toString()
+      updateDots(newIndex)
+    }
+  }, 4000)
+}
+
+function stopAutoPlay() {
+  if (autoPlayInterval) {
+    clearInterval(autoPlayInterval)
+  }
+}
 
 export default function EuroWeldProWebsite() {
+  useEffect(() => {
+    const slider = document.getElementById("slider")
+    if (slider) {
+      slider.dataset.currentIndex = "0"
+      startAutoPlay()
+
+      // Pause on hover
+      slider.addEventListener("mouseenter", stopAutoPlay)
+      slider.addEventListener("mouseleave", startAutoPlay)
+    }
+
+    return () => {
+      stopAutoPlay()
+    }
+  }, [])
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -155,7 +205,7 @@ export default function EuroWeldProWebsite() {
 
             <div className="relative">
               <Image
-         src="/pic.webp"
+                src="/pic.webp"
                 alt="Professional welders at work"
                 width={800}
                 height={600}
@@ -179,7 +229,7 @@ export default function EuroWeldProWebsite() {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <Image
-           src="/pic.webp"
+                src="/eagle.jpg"
                 alt="Industrial facility"
                 width={600}
                 height={500}
@@ -307,7 +357,7 @@ export default function EuroWeldProWebsite() {
                 <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span> Skilled in reading and interpreting technical drawings.</span>
+                    <span>Skilled in reading and interpreting technical drawings</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
@@ -365,6 +415,179 @@ export default function EuroWeldProWebsite() {
               </Card>
             </div>
           </div>
+
+          {/* Image Slider Section */}
+          <div className="mt-20">
+            <h3 className="text-3xl font-bold text-slate-800 text-center mb-12">Our Work in Action</h3>
+
+            <div className="relative overflow-hidden rounded-lg shadow-lg">
+              <div
+                id="slider"
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: "translateX(0%)" }}
+                data-current-index="0"
+              >
+                <div className="min-w-full">
+                  <Image
+                    src="/pic1.jpg"
+                    alt="Welders working on boiler construction"
+                    width={800}
+                    height={400}
+                    className="w-full h-64 md:h-80 lg:h-96 object-cover"
+                  />
+                </div>
+                <div className="min-w-full">
+                  <Image
+                       src="/pic2.jpg"
+                    alt="Oil and gas pipeline welding"
+                    width={800}
+                    height={400}
+                    className="w-full h-64 md:h-80 lg:h-96 object-cover"
+                  />
+                </div>
+                <div className="min-w-full">
+                  <Image
+                    src="/pic3.jpg"
+                    alt="Shipbuilding fabrication"
+                    width={800}
+                    height={400}
+                    className="w-full h-64 md:h-80 lg:h-96 object-cover"
+                  />
+                </div>
+                <div className="min-w-full">
+                  <Image
+                    src="/pic4.jpg"
+                    alt="Food industry welding"
+                    width={800}
+                    height={400}
+                    className="w-full h-64 md:h-80 lg:h-96 object-cover"
+                  />
+                </div>
+                <div className="min-w-full">
+                  <Image
+                    src="/pic5.jpg"
+                    alt="Fertilizer plant construction"
+                    width={800}
+                    height={400}
+                    className="w-full h-64 md:h-80 lg:h-96 object-cover"
+                  />
+                </div>
+                 <div className="min-w-full">
+                  <Image
+                    src="/pic6.jpg"
+                    alt="Fertilizer plant construction"
+                    width={800}
+                    height={400}
+                    className="w-full h-64 md:h-80 lg:h-96 object-cover"
+                  />
+                </div>
+                <div className="min-w-full">
+                  <Image
+                    src="/pic7.jpg"
+                    alt="Fertilizer plant construction"
+                    width={800}
+                    height={400}
+                    className="w-full h-64 md:h-80 lg:h-96 object-cover"
+                  />
+                </div>
+                <div className="min-w-full">
+                  <Image
+                    src="/pic8.jpg"
+                    alt="Fertilizer plant construction"
+                    width={800}
+                    height={400}
+                    className="w-full h-64 md:h-80 lg:h-96 object-cover"
+                  />
+                </div>
+                <div className="min-w-full">
+                  <Image
+                    src="/pic9.jpg"
+                    alt="Fertilizer plant construction"
+                    width={800}
+                    height={400}
+                    className="w-full h-64 md:h-80 lg:h-96 object-cover"
+                  />
+                </div>
+                <div className="min-w-full">
+                  <Image
+                    src="/pic10.jpg"
+                    alt="Fertilizer plant construction"
+                    width={800}
+                    height={400}
+                    className="w-full h-64 md:h-80 lg:h-96 object-cover"
+                  />
+                </div>
+                <div className="min-w-full">
+                  <Image
+                    src="/pic11.jpg"
+                    alt="Fertilizer plant construction"
+                    width={800}
+                    height={400}
+                    className="w-full h-64 md:h-80 lg:h-96 object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Navigation Arrows */}
+              <button
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                onClick={() => {
+                  const slider = document.getElementById("slider")
+                  const currentIndex = Number.parseInt(slider?.dataset.currentIndex || "0")
+                  const totalSlides = 5
+                  const newIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1
+                  if (slider) {
+                    slider.style.transform = `translateX(-${newIndex * 100}%)`
+                    slider.dataset.currentIndex = newIndex.toString()
+                    updateDots(newIndex)
+                  }
+                }}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+
+              <button
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                onClick={() => {
+                  const slider = document.getElementById("slider")
+                  const currentIndex = Number.parseInt(slider?.dataset.currentIndex || "0")
+                  const totalSlides = 5
+                  const newIndex = (currentIndex + 1) % totalSlides
+                  if (slider) {
+                    slider.style.transform = `translateX(-${newIndex * 100}%)`
+                    slider.dataset.currentIndex = newIndex.toString()
+                    updateDots(newIndex)
+                  }
+                }}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+
+              {/* Dots Indicator */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                {[0, 1, 2, 3, 4].map((index) => (
+                  <button
+                    key={index}
+                    className={`slider-dot w-3 h-3 rounded-full transition-colors ${
+                      index === 0 ? "bg-orange-500" : "bg-white/50 hover:bg-white/70"
+                    }`}
+                    onClick={() => {
+                      const slider = document.getElementById("slider")
+                      if (slider) {
+                        slider.style.transform = `translateX(-${index * 100}%)`
+                        slider.dataset.currentIndex = index.toString()
+                        updateDots(index)
+                      }
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -377,8 +600,8 @@ export default function EuroWeldProWebsite() {
               <p className="text-xl text-gray-300 mb-8">
                 Opportunities for skilled welders and fabricators seeking rewarding careers across Europe
               </p>
- 
-  <h3 className="text-2xl font-bold text-white mb-6">Why Work With Us?</h3>
+
+              <h3 className="text-2xl font-bold text-white mb-6">Why Work With Us?</h3>
 
               <div className="space-y-4 mb-8">
                 <div className="flex items-center space-x-3">
@@ -406,7 +629,7 @@ export default function EuroWeldProWebsite() {
 
             <div>
               <Image
-               src="/pic.webp"
+                src="/pic.webp"
                 alt="Professional team"
                 width={600}
                 height={500}
