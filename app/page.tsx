@@ -163,7 +163,7 @@ export default function EuroWeldProWebsite() {
                 Specializing in Boiler Construction, Oil & Gas, Food Industry, Shipbuilding, and Fertilizer Sectors.
               </p>
               <p className="text-base text-gray-400 leading-relaxed">
-                We are a premier manpower supply company dedicated to providing highly skilled welders and fabricators
+                We are a premier  company dedicated to providing highly skilled welders and fabricators
                 to industries throughout Europe. Our expertise ensures your projects in critical sectors like Boiler
                 Construction, Oil & Gas, Food Industry, Shipbuilding, and Fertilizer are completed efficiently and to
                 the highest standards. We focus on timely and effective workforce solutions to boost your productivity.

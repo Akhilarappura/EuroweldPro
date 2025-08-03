@@ -4,8 +4,8 @@ import { GeistMono } from 'geist/font/mono'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'EuroWeld',
-  description: 'manpowerSupply',
+  title: 'EagleWorld',
+  // description: 'manpowerSupply',
   generator: 'celestial code',
 }
 
