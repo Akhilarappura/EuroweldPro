@@ -163,7 +163,7 @@ export default function EuroWeldProWebsite() {
                 Specializing in Boiler Construction, Oil & Gas, Food Industry, Shipbuilding, and Fertilizer Sectors.
               </p>
               <p className="text-base text-gray-400 leading-relaxed">
-                We are a premier  company dedicated to providing highly skilled welders and fabricators
+                We are a premier  company dedicated to providing highly skilled welders, fabricators, electricians
                 to industries throughout Europe. Our expertise ensures your projects in critical sectors like Boiler
                 Construction, Oil & Gas, Food Industry, Shipbuilding, and Fertilizer are completed efficiently and to
                 the highest standards. We focus on timely and effective workforce solutions to boost your productivity.
@@ -877,7 +877,7 @@ export default function EuroWeldProWebsite() {
 
           <div className="border-t border-slate-700 mt-8 pt-8 text-center text-gray-400">
             <p>
-              &copy; {new Date().getFullYear()} EuroWeld Pro. All rights reserved. | GDPR Compliant | Based in Malta, EU
+              &copy; {new Date().getFullYear()} Eagle World LLC | All rights reserved. | GDPR Compliant | Based in Malta, EU
             </p>
           </div>
         </div>
