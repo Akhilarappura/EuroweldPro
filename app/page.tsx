@@ -21,7 +21,6 @@ import {
   Utensils,
   Building2,
   Wrench,
-  HardHat,
   Award,
   FileText,
 } from "lucide-react"
@@ -40,56 +39,24 @@ function updateDots(activeIndex: number) {
   })
 }
 
-let autoPlayInterval: NodeJS.Timeout
-
-function startAutoPlay() {
-  autoPlayInterval = setInterval(() => {
-    const slider = document.getElementById("slider")
-    if (slider) {
-      const currentIndex = Number.parseInt(slider.dataset.currentIndex || "0")
-      const totalSlides = 5
-      const newIndex = (currentIndex + 1) % totalSlides
-      slider.style.transform = `translateX(-${newIndex * 100}%)`
-      slider.dataset.currentIndex = newIndex.toString()
-      updateDots(newIndex)
-    }
-  }, 4000)
-}
-
-function stopAutoPlay() {
-  if (autoPlayInterval) {
-    clearInterval(autoPlayInterval)
-  }
-}
-
 export default function EuroWeldProWebsite() {
   useEffect(() => {
     const slider = document.getElementById("slider")
     if (slider) {
       slider.dataset.currentIndex = "0"
-      startAutoPlay()
-
-      // Pause on hover
-      slider.addEventListener("mouseenter", stopAutoPlay)
-      slider.addEventListener("mouseleave", startAutoPlay)
-    }
-
-    return () => {
-      stopAutoPlay()
     }
   }, [])
 
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-        <header className="bg-slate-800 text-white shadow-lg sticky top-0 z-50">
+      <header className="bg-slate-800 text-white shadow-lg sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <Image src="/eagle.jpg" alt="EuroWeld Pro Logo" width={50} height={50} className="rounded-lg" />
               <h1 className="text-2xl font-bold">Eagle World</h1>
             </div>
-
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-6">
               <a href="#home" className="hover:text-orange-500 transition-colors">
@@ -108,7 +75,6 @@ export default function EuroWeldProWebsite() {
                 Contact
               </a>
             </nav>
-
             {/* Mobile Menu Button */}
             <button
               className="md:hidden p-2"
@@ -122,7 +88,6 @@ export default function EuroWeldProWebsite() {
               </svg>
             </button>
           </div>
-
           {/* Mobile Navigation Menu */}
           <div id="mobile-menu" className="hidden md:hidden mt-4 pb-4">
             <nav className="flex flex-col space-y-3">
@@ -145,9 +110,8 @@ export default function EuroWeldProWebsite() {
           </div>
         </div>
       </header>
-
       {/* Hero Section */}
-        <section
+      <section
         id="home"
         className="relative bg-gradient-to-r from-slate-800 to-slate-700 text-white min-h-screen flex items-center"
       >
@@ -156,19 +120,18 @@ export default function EuroWeldProWebsite() {
           <div className="grid lg:grid-cols-2 gap-8 items-center min-h-screen py-8">
             <div className="space-y-4">
               <h1 className="text-3xl lg:text-5xl font-bold leading-tight">
-                Your Trusted Partner for Expert <span className="text-orange-500">Welders , Fabricators,Electricians etc</span> Across
-                Europe
+                Your Trusted Partner for Expert{" "}
+                <span className="text-orange-500">Welders , Fabricators,Electricians etc</span> Across Europe
               </h1>
               <p className="text-lg text-gray-300">
                 Specializing in Boiler Construction, Oil & Gas, Food Industry, Shipbuilding, and Fertilizer Sectors.
               </p>
               <p className="text-base text-gray-400 leading-relaxed">
-                We are a premier  company dedicated to providing highly skilled welders, fabricators, electricians
-                to industries throughout Europe. Our expertise ensures your projects in critical sectors like Boiler
+                We are a premier company dedicated to providing highly skilled welders, fabricators, electricians to
+                industries throughout Europe. Our expertise ensures your projects in critical sectors like Boiler
                 Construction, Oil & Gas, Food Industry, Shipbuilding, and Fertilizer are completed efficiently and to
                 the highest standards. We focus on timely and effective workforce solutions to boost your productivity.
               </p>
-
               <div className="grid sm:grid-cols-2 gap-3 my-6">
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="h-6 w-6 text-orange-500 flex-shrink-0" />
@@ -191,7 +154,6 @@ export default function EuroWeldProWebsite() {
                   <span>Pan-European Reach</span>
                 </div>
               </div>
-
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white">
                   <a href="#contact">Contact Us Today</a>
@@ -205,7 +167,6 @@ export default function EuroWeldProWebsite() {
                 </Button>
               </div>
             </div>
-
             <div className="relative">
               <Image
                 src="/pic.webp"
@@ -218,17 +179,15 @@ export default function EuroWeldProWebsite() {
           </div>
         </div>
       </section>
-
       {/* About Us Section */}
       <section id="about" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">About EagleWorld</h2>
+            <h2 className="text-4xl font-bold text-slate-800 mb-4">About Eagle World</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Leading manpower supplier for European industries with expertise in critical sectors
             </p>
           </div>
-
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <Image
@@ -263,7 +222,6 @@ export default function EuroWeldProWebsite() {
               </div>
             </div>
           </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
@@ -274,7 +232,6 @@ export default function EuroWeldProWebsite() {
                 <p className="text-gray-600">Specialists in assessing welding and fabrication skills</p>
               </CardContent>
             </Card>
-
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
                 <Shield className="h-12 w-12 text-blue-600 mx-auto mb-2" />
@@ -284,7 +241,6 @@ export default function EuroWeldProWebsite() {
                 <p className="text-gray-600">Comprehensive checks on qualifications and experience</p>
               </CardContent>
             </Card>
-
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
                 <FileText className="h-12 w-12 text-green-600 mx-auto mb-2" />
@@ -294,7 +250,6 @@ export default function EuroWeldProWebsite() {
                 <p className="text-gray-600">Full adherence to European labor laws and procedures</p>
               </CardContent>
             </Card>
-
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
                 <Zap className="h-12 w-12 text-orange-500 mx-auto mb-2" />
@@ -307,17 +262,15 @@ export default function EuroWeldProWebsite() {
           </div>
         </div>
       </section>
-
       {/* Services Section */}
       <section id="services" className="py-20 bg-white">
-        {/* <div className="container mx-auto px-4"> */}
+        <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-800 mb-4">Our Services</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Comprehensive manpower solutions for Europe's most demanding industries
             </p>
           </div>
-
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
@@ -330,13 +283,10 @@ export default function EuroWeldProWebsite() {
                 <div>
                   <h4 className="font-semibold text-slate-700 mb-2">Welding Techniques:</h4>
                   <div className="flex flex-wrap gap-2">
-                     <Badge variant="secondary">TIG</Badge>
-                          <Badge variant="secondary">MMA</Badge>
-                               <Badge variant="secondary">MIG</Badge>
+                    <Badge variant="secondary">TIG</Badge>
+                    <Badge variant="secondary">MMA</Badge>
+                    <Badge variant="secondary">MIG</Badge>
                     <Badge variant="secondary">SAW</Badge>
-               
-                   
-               
                   </div>
                 </div>
                 <div>
@@ -344,8 +294,8 @@ export default function EuroWeldProWebsite() {
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="outline">Carbon Steel</Badge>
                     <Badge variant="outline">Stainless Steel</Badge>
-                     <Badge variant="outline">Duplex</Badge>
-                      <Badge variant="outline">Super Duplex</Badge>
+                    <Badge variant="outline">Duplex</Badge>
+                    <Badge variant="outline">Super Duplex</Badge>
                     <Badge variant="outline">Aluminum</Badge>
                     <Badge variant="outline">Exotic Metals</Badge>
                   </div>
@@ -353,7 +303,6 @@ export default function EuroWeldProWebsite() {
                 <p className="text-gray-600">All major welding certifications including TUV ANB </p>
               </CardContent>
             </Card>
-
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="flex items-center space-x-3">
@@ -383,7 +332,6 @@ export default function EuroWeldProWebsite() {
               </CardContent>
             </Card>
           </div>
-
           <div>
             <h3 className="text-3xl font-bold text-slate-800 text-center mb-12">Industries We Serve</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -393,28 +341,24 @@ export default function EuroWeldProWebsite() {
                   <CardTitle className="text-slate-800">Boiler Construction</CardTitle>
                 </CardHeader>
               </Card>
-
               <Card className="text-center hover:shadow-lg transition-shadow bg-gradient-to-br from-blue-50 to-blue-100">
                 <CardHeader>
                   <Fuel className="h-16 w-16 text-blue-600 mx-auto mb-2" />
                   <CardTitle className="text-slate-800">Oil & Gas</CardTitle>
                 </CardHeader>
               </Card>
-
               <Card className="text-center hover:shadow-lg transition-shadow bg-gradient-to-br from-green-50 to-green-100">
                 <CardHeader>
                   <Utensils className="h-16 w-16 text-green-600 mx-auto mb-2" />
                   <CardTitle className="text-slate-800">Food Industry</CardTitle>
                 </CardHeader>
               </Card>
-
               <Card className="text-center hover:shadow-lg transition-shadow bg-gradient-to-br from-cyan-50 to-cyan-100">
                 <CardHeader>
                   <Ship className="h-16 w-16 text-cyan-600 mx-auto mb-2" />
                   <CardTitle className="text-slate-800">Shipbuilding</CardTitle>
                 </CardHeader>
               </Card>
-
               <Card className="text-center hover:shadow-lg transition-shadow bg-gradient-to-br from-purple-50 to-purple-100">
                 <CardHeader>
                   <Building2 className="h-16 w-16 text-purple-600 mx-auto mb-2" />
@@ -423,242 +367,206 @@ export default function EuroWeldProWebsite() {
               </Card>
             </div>
           </div>
-
-         
-            {/* Image Slider Section */}
-            <div className="mt-20">
-              <h3 className="text-3xl font-bold text-slate-800 text-center mb-12">Our Work in Action</h3>
-
-              <div className="relative overflow-hidden rounded-lg shadow-lg">
-                <div
-                  id="slider"
-                  className="flex transition-transform duration-500 ease-in-out"
-                  style={{ transform: "translateX(0%)" }}
-                  data-current-index="0"
-                >
-                  {/* Slide 1 - Image */}
-                  <div className="min-w-full">
-                    <Image
-                         src="/pic1.jpg"
-                      alt="Welders working on boiler construction"
-                      width={800}
-                      height={400}
-                      className="w-full h-64 md:h-80 lg:h-96 object-cover"
-                    />
-                  </div>
-
-                  {/* Slide 2 - Image */}
-                  <div className="min-w-full">
-                    <Image
-                      src="/pic2.jpg"
-                      alt="Oil and gas pipeline welding"
-                      width={800}
-                      height={400}
-                      className="w-full h-64 md:h-80 lg:h-96 object-cover"
-                    />
-                  </div>
-
-                  {/* Slide 3 - Video */}
-                        <div className="min-w-full">
-                  <video className="w-full h-64 md:h-80 lg:h-96 object-cover" controls muted loop poster="/eagle.jpg">
+          {/* Image Slider Section */}
+          <div className="mt-20">
+            <h3 className="text-3xl font-bold text-slate-800 text-center mb-12">Our Work in Action</h3>
+            <div className="relative overflow-hidden rounded-lg shadow-lg">
+              <div
+                id="slider"
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: "translateX(0%)" }}
+                data-current-index="0"
+              >
+                {/* Slide 1 - Image */}
+                <div className="min-w-full max-h-[400px] flex items-center justify-center">
+                  <Image
+                    src="/pic1.jpg"
+                    alt="Welders working on boiler construction"
+                    width={800}
+                    height={400}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                {/* Slide 2 - Image */}
+                <div className="min-w-full max-h-[400px] flex items-center justify-center">
+                  <Image
+                    src="/pic2.jpg"
+                    alt="Oil and gas pipeline welding"
+                    width={800}
+                    height={400}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                {/* Slide 3 - Video */}
+                <div className="min-w-full max-h-[400px] flex items-center justify-center">
+                  <video className="w-full h-full object-contain" controls muted loop poster="/eagle.jpg">
                     <source src="/video1.mp4" type="video/mp4" />
-                    <source src="/video1.mp4" type="video/webm" />
-             
+                    <source src="/video1.webm" type="video/webm" />
+                    Your browser does not support the video tag.
                   </video>
                 </div>
-
-                  {/* Slide 4 - Image */}
-                  <div className="min-w-full">
-                    <Image
-                      src="/pic3.jpg"
-                      alt="Shipbuilding fabrication work"
-                      width={800}
-                      height={400}
-                      className="w-full h-64 md:h-80 lg:h-96 object-cover"
-                    />
-                  </div>
-
-                  {/* Slide 5 - Image */}
-                  <div className="min-w-full">
-                    <Image
-                      src="/pic4.jpg"
-                      alt="Food industry stainless steel welding"
-                      width={800}
-                      height={400}
-                      className="w-full h-64 md:h-80 lg:h-96 object-cover"
-                    />
-                  </div>
-
-                  {/* Slide 6 - Video */}
-                   <div className="min-w-full">
-                  <video className="w-full h-64 md:h-80 lg:h-96 object-cover" controls muted loop poster="/eagle.jpg">
+                {/* Slide 4 - Image */}
+                <div className="min-w-full max-h-[400px] flex items-center justify-center">
+                  <Image
+                    src="/pic3.jpg"
+                    alt="Shipbuilding fabrication work"
+                    width={800}
+                    height={400}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                {/* Slide 5 - Image */}
+                <div className="min-w-full max-h-[400px] flex items-center justify-center">
+                  <Image
+                    src="/pic4.jpg"
+                    alt="Food industry stainless steel welding"
+                    width={800}
+                    height={400}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                {/* Slide 6 - Video */}
+                <div className="min-w-full max-h-[400px] flex items-center justify-center">
+                  <video className="w-full h-full object-contain" controls muted loop poster="/eagle.jpg">
                     <source src="/video2.mp4" type="video/mp4" />
-                    <source src="/video2.mp4" type="video/webm" />
-             
+                    <source src="/video2.webm" type="video/webm" />
+                    Your browser does not support the video tag.
                   </video>
                 </div>
-
-
-                  {/* Slide 7 - Image */}
-                  <div className="min-w-full">
-                    <Image
-                           src="/pic5.jpg"
-                      alt="Fertilizer plant construction"
-                      width={800}
-                      height={400}
-                      className="w-full h-64 md:h-80 lg:h-96 object-cover"
-                    />
-                  </div>
-
-                  {/* Slide 8 - Image */}
-                  <div className="min-w-full">
-                    <Image
-                      src="/pic7.jpg"
-                      alt="Industrial boiler welding"
-                      width={800}
-                      height={400}
-                      className="w-full h-64 md:h-80 lg:h-96 object-cover"
-                    />
-                  </div>
-
-                  {/* Slide 9 - Video */}
-                  <div className="min-w-full">
-                  <video className="w-full h-64 md:h-80 lg:h-96 object-cover" controls muted loop poster="/eagle.jpg">
+                {/* Slide 7 - Image */}
+                <div className="min-w-full max-h-[400px] flex items-center justify-center">
+                  <Image
+                    src="/pic5.jpg"
+                    alt="Fertilizer plant construction"
+                    width={800}
+                    height={400}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                {/* Slide 8 - Image */}
+                <div className="min-w-full max-h-[400px] flex items-center justify-center">
+                  <Image
+                    src="/pic7.jpg"
+                    alt="Industrial boiler welding"
+                    width={800}
+                    height={400}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                {/* Slide 9 - Video */}
+                <div className="min-w-full max-h-[400px] flex items-center justify-center">
+                  <video className="w-full h-full object-contain" controls muted loop poster="/eagle.jpg">
                     <source src="/video3.mp4" type="video/mp4" />
-                    <source src="/video3.mp4" type="video/webm" />
-             
+                    <source src="/video3.webm" type="video/webm" />
+                    Your browser does not support the video tag.
                   </video>
                 </div>
-
-
-                  {/* Slide 10 - Image */}
-                  <div className="min-w-full">
-                    <Image
-                          src="/pic8.jpg"
-                      alt="Offshore platform welding"
-                      width={800}
-                      height={400}
-                      className="w-full h-64 md:h-80 lg:h-96 object-cover"
-                    />
-                  </div>
-
-                  {/* Slide 11 - Video */}
-                
-                   <div className="min-w-full">
-                  <video className="w-full h-64 md:h-80 lg:h-96 object-cover" controls muted loop poster="/eagle.jpg">
+                {/* Slide 10 - Image */}
+                <div className="min-w-full max-h-[400px] flex items-center justify-center">
+                  <Image
+                    src="/pic8.jpg"
+                    alt="Offshore platform welding"
+                    width={800}
+                    height={400}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                {/* Slide 11 - Video */}
+                <div className="min-w-full max-h-[400px] flex items-center justify-center">
+                  <video className="w-full h-full object-contain" controls muted loop poster="/eagle.jpg">
                     <source src="/video4.mp4" type="video/mp4" />
-                    <source src="/video4.mp4" type="video/webm" />
-             
+                    <source src="/video4.webm" type="video/webm" />
+                    Your browser does not support the video tag.
                   </video>
                 </div>
-
-                  {/* Slide 12 - Image */}
-                  <div className="min-w-full">
-                    <Image
-                      src="/pic9.jpg"
-                      alt="Precision welding work"
-                      width={800}
-                      height={400}
-                      className="w-full h-64 md:h-80 lg:h-96 object-cover"
-                    />
-                  </div>
-
-                  {/* Slide 13 - Video */}
-                  <div className="min-w-full">
-                  <video className="w-full h-64 md:h-80 lg:h-96 object-cover" controls muted loop poster="/eagle.jpg">
+                {/* Slide 12 - Image */}
+                <div className="min-w-full max-h-[400px] flex items-center justify-center">
+                  <Image
+                    src="/pic9.jpg"
+                    alt="Precision welding work"
+                    width={800}
+                    height={400}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                {/* Slide 13 - Video */}
+                <div className="min-w-full max-h-[400px] flex items-center justify-center">
+                  <video className="w-full h-full object-contain" controls muted loop poster="/eagle.jpg">
                     <source src="/video5.mp4" type="video/mp4" />
-                    <source src="/video5.mp4" type="video/webm" />
-             
+                    <source src="/video5.webm" type="video/webm" />
+                    Your browser does not support the video tag.
                   </video>
                 </div>
-                 <div className="min-w-full">
-                    <Image
-                      src="/pic10.jpg"
-                      alt="Precision welding work"
-                      width={800}
-                      height={400}
-                      className="w-full h-64 md:h-80 lg:h-96 object-cover"
-                    />
-                  </div>
-                         <div className="min-w-full">
-                    <Image
-                      src="/pic11.jpg"
-                      alt="Precision welding work"
-                      width={800}
-                      height={400}
-                      className="w-full h-64 md:h-80 lg:h-96 object-cover"
-                    />
-                  </div>
+              </div>
 
-                {/* Navigation Arrows */}
-                <button
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors z-10"
-                  onClick={() => {
-                    const slider = document.getElementById("slider")
-                    const currentIndex = Number.parseInt(slider?.dataset.currentIndex || "0")
-                    const totalSlides = 13
-                    const newIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1
-                    if (slider) {
-                      const videos = slider.querySelectorAll("video")
-                      videos.forEach((video) => video.pause())
-                      slider.style.transform = `translateX(-${newIndex * 100}%)`
-                      slider.dataset.currentIndex = newIndex.toString()
-                      updateDots(newIndex)
-                    }
-                  }}
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
+              {/* Main Navigation Arrows (outside individual slides) */}
+              <button
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors z-10"
+                onClick={() => {
+                  const slider = document.getElementById("slider")
+                  const currentIndex = Number.parseInt(slider?.dataset.currentIndex || "0")
+                  const totalSlides = 13
+                  const newIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1
+                  if (slider) {
+                    const videos = slider.querySelectorAll("video")
+                    videos.forEach((video) => video.pause())
+                    slider.style.transform = `translateX(-${newIndex * 100}%)`
+                    slider.dataset.currentIndex = newIndex.toString()
+                    updateDots(newIndex)
+                  }
+                }}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
 
-                <button
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors z-10"
-                  onClick={() => {
-                    const slider = document.getElementById("slider")
-                    const currentIndex = Number.parseInt(slider?.dataset.currentIndex || "0")
-                    const totalSlides = 13
-                    const newIndex = (currentIndex + 1) % totalSlides
-                    if (slider) {
-                      const videos = slider.querySelectorAll("video")
-                      videos.forEach((video) => video.pause())
-                      slider.style.transform = `translateX(-${newIndex * 100}%)`
-                      slider.dataset.currentIndex = newIndex.toString()
-                      updateDots(newIndex)
-                    }
-                  }}
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
+              <button
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors z-10"
+                onClick={() => {
+                  const slider = document.getElementById("slider")
+                  const currentIndex = Number.parseInt(slider?.dataset.currentIndex || "0")
+                  const totalSlides = 13
+                  const newIndex = (currentIndex + 1) % totalSlides
+                  if (slider) {
+                    const videos = slider.querySelectorAll("video")
+                    videos.forEach((video) => video.pause())
+                    slider.style.transform = `translateX(-${newIndex * 100}%)`
+                    slider.dataset.currentIndex = newIndex.toString()
+                    updateDots(newIndex)
+                  }
+                }}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
 
-                {/* Dots Indicator */}
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10 flex-wrap justify-center max-w-md">
-                  {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((index) => (
-                    <button
-                      key={index}
-                      className={`slider-dot w-3 h-3 rounded-full transition-colors ${
-                        index === 0 ? "bg-orange-500" : "bg-white/50 hover:bg-white/70"
-                      }`}
-                      onClick={() => {
-                        const slider = document.getElementById("slider")
-                        if (slider) {
-                          const videos = slider.querySelectorAll("video")
-                          videos.forEach((video) => video.pause())
-                          slider.style.transform = `translateX(-${index * 100}%)`
-                          slider.dataset.currentIndex = index.toString()
-                          updateDots(index)
-                        }
-                      }}
-                    />
-                  ))}
-                </div>
+              {/* Dots Indicator - Fixed to show all 13 dots */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20 flex-wrap justify-center max-w-2xl">
+                {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((index) => (
+                  <button
+                    key={index}
+                    className={`slider-dot w-3 h-3 rounded-full transition-colors ${
+                      index === 0 ? "bg-orange-500" : "bg-white/50 hover:bg-white/70"
+                    }`}
+                    onClick={() => {
+                      const slider = document.getElementById("slider")
+                      if (slider) {
+                        const videos = slider.querySelectorAll("video")
+                        videos.forEach((video) => video.pause())
+                        slider.style.transform = `translateX(-${index * 100}%)`
+                        slider.dataset.currentIndex = index.toString()
+                        updateDots(index)
+                      }
+                    }}
+                  />
+                ))}
               </div>
             </div>
           </div>
-        </section>
-
+        </div>
+      </section>
       {/* For Candidates Section */}
       <section id="candidates" className="py-20 bg-gradient-to-r from-slate-800 to-slate-700 text-white">
         <div className="container mx-auto px-4">
@@ -668,9 +576,7 @@ export default function EuroWeldProWebsite() {
               <p className="text-xl text-gray-300 mb-8">
                 Opportunities for skilled welders and fabricators seeking rewarding careers across Europe
               </p>
-
               <h3 className="text-2xl font-bold text-white mb-6">Why Work With Us?</h3>
-
               <div className="space-y-4 mb-8">
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="h-6 w-6 text-orange-500 flex-shrink-0" />
@@ -689,12 +595,10 @@ export default function EuroWeldProWebsite() {
                   <span>Support with visa and travel arrangements</span>
                 </div>
               </div>
-
               {/* <Button size="lg" className="bg-orange-600 hover:bg-orange-700">
                 Submit Your CV Now
               </Button> */}
             </div>
-
             <div>
               <Image
                 src="/pic.webp"
@@ -707,7 +611,6 @@ export default function EuroWeldProWebsite() {
           </div>
         </div>
       </section>
-
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -715,7 +618,6 @@ export default function EuroWeldProWebsite() {
             <h2 className="text-4xl font-bold text-slate-800 mb-4">Contact Us</h2>
             <p className="text-xl text-gray-600">Ready to discuss your manpower needs? Get in touch with our team</p>
           </div>
-
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="space-y-8">
               <div className="flex items-start space-x-4">
@@ -728,15 +630,13 @@ export default function EuroWeldProWebsite() {
                     TRIQ IGNAZIO GAVINO BONAVITA,
                     <br />
                     PEMBROKE
-
                     <br />
                     PBK 1150
-                    
                     <br />
-                    Malta</p>
+                    Malta
+                  </p>
                 </div>
               </div>
-
               <div className="flex items-start space-x-4">
                 <Phone className="h-6 w-6 text-orange-500 mt-1 flex-shrink-0" />
                 <div>
@@ -744,7 +644,6 @@ export default function EuroWeldProWebsite() {
                   <p className="text-gray-600">+356 9939 9193</p>
                 </div>
               </div>
-
               <div className="flex items-start space-x-4">
                 <Mail className="h-6 w-6 text-orange-500 mt-1 flex-shrink-0" />
                 <div>
@@ -752,7 +651,6 @@ export default function EuroWeldProWebsite() {
                   <p className="text-gray-600">info@euroweldpro.com</p>
                 </div>
               </div>
-
               <div className="flex items-start space-x-4">
                 <Clock className="h-6 w-6 text-orange-500 mt-1 flex-shrink-0" />
                 <div>
@@ -761,7 +659,6 @@ export default function EuroWeldProWebsite() {
                 </div>
               </div>
             </div>
-
             <Card>
               <CardHeader>
                 <CardTitle>Send us a message</CardTitle>
@@ -798,19 +695,17 @@ export default function EuroWeldProWebsite() {
           </div>
         </div>
       </section>
-
       {/* Footer */}
       <footer className="bg-slate-800 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-          <Image src="/eagle.jpg" alt="Eagle World LLC Logo" width={40} height={40} className="rounded-lg" />
-          <h3 className="text-xl font-bold">Eagle World LLC</h3>
-        </div>
+                <Image src="/eagle.jpg" alt="Eagle World LLC Logo" width={40} height={40} className="rounded-lg" />
+                <h3 className="text-xl font-bold">Eagle World LLC</h3>
+              </div>
               <p className="text-gray-400">Your trusted partner for expert welders and fabricators across Europe.</p>
             </div>
-
             <div>
               <h4 className="font-semibold mb-4">Services</h4>
               <ul className="space-y-2 text-gray-400">
@@ -836,7 +731,6 @@ export default function EuroWeldProWebsite() {
                 </li>
               </ul>
             </div>
-
             <div>
               <h4 className="font-semibold mb-4">Industries</h4>
               <ul className="space-y-2 text-gray-400">
@@ -847,7 +741,6 @@ export default function EuroWeldProWebsite() {
                 <li>Fertilizer</li>
               </ul>
             </div>
-
             <div>
               <h4 className="font-semibold mb-4">Legal</h4>
               <ul className="space-y-2 text-gray-400">
@@ -874,10 +767,10 @@ export default function EuroWeldProWebsite() {
               </ul>
             </div>
           </div>
-
           <div className="border-t border-slate-700 mt-8 pt-8 text-center text-gray-400">
             <p>
-              &copy; {new Date().getFullYear()} Eagle World LLC | All rights reserved. | GDPR Compliant | Based in Malta, EU
+              &copy; {new Date().getFullYear()} Eagle World LLC | All rights reserved. | GDPR Compliant | Based in
+              Malta, EU
             </p>
           </div>
         </div>
