@@ -804,10 +804,10 @@ export default function EuroWeldProWebsite() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <HardHat className="h-8 w-8 text-orange-500" />
-                <h3 className="text-xl font-bold">EuroWeld Pro</h3>
-              </div>
+              <div className="flex items-center space-x-3 mb-4">
+          <Image src="/eagle.jpg" alt="Eagle World LLC Logo" width={40} height={40} className="rounded-lg" />
+          <h3 className="text-xl font-bold">Eagle World LLC</h3>
+        </div>
               <p className="text-gray-400">Your trusted partner for expert welders and fabricators across Europe.</p>
             </div>
 
