@@ -87,7 +87,7 @@ export default function EuroWeldProWebsite() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <Image src="/eagle.jpg" alt="EuroWeld Pro Logo" width={50} height={50} className="rounded-lg" />
-              <h1 className="text-2xl font-bold">EagleWorld</h1>
+              <h1 className="text-2xl font-bold">Eagle World</h1>
             </div>
 
             {/* Desktop Navigation */}
@@ -330,10 +330,13 @@ export default function EuroWeldProWebsite() {
                 <div>
                   <h4 className="font-semibold text-slate-700 mb-2">Welding Techniques:</h4>
                   <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">MIG</Badge>
-                    <Badge variant="secondary">TIG</Badge>
-                    <Badge variant="secondary">MMA</Badge>
+                     <Badge variant="secondary">TIG</Badge>
+                          <Badge variant="secondary">MMA</Badge>
+                               <Badge variant="secondary">MIG</Badge>
                     <Badge variant="secondary">SAW</Badge>
+               
+                   
+               
                   </div>
                 </div>
                 <div>
@@ -341,11 +344,13 @@ export default function EuroWeldProWebsite() {
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="outline">Carbon Steel</Badge>
                     <Badge variant="outline">Stainless Steel</Badge>
+                     <Badge variant="outline">Duplex</Badge>
+                      <Badge variant="outline">Super Duplex</Badge>
                     <Badge variant="outline">Aluminum</Badge>
                     <Badge variant="outline">Exotic Metals</Badge>
                   </div>
                 </div>
-                <p className="text-gray-600">All major welding certifications including ISO 9606</p>
+                <p className="text-gray-600">All major welding certifications including TUV ANB </p>
               </CardContent>
             </Card>
 
@@ -360,7 +365,7 @@ export default function EuroWeldProWebsite() {
                 <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span>Skilled in reading and interpreting technical drawings</span>
+                    <span>Skilled in reading and interpreting technical drawings (Piping and Structure)</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
@@ -717,7 +722,18 @@ export default function EuroWeldProWebsite() {
                 <MapPin className="h-6 w-6 text-orange-500 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold text-slate-800 mb-1">Our Location</h3>
-                  <p className="text-gray-600">Malta, Europe</p>
+                  <p className="text-gray-600">
+                    18 OFFICE 3,
+                    <br />
+                    TRIQ IGNAZIO GAVINO BONAVITA,
+                    <br />
+                    PEMBROKE
+
+                    <br />
+                    PBK 1150
+                    
+                    <br />
+                    Malta</p>
                 </div>
               </div>
 
@@ -725,7 +741,7 @@ export default function EuroWeldProWebsite() {
                 <Phone className="h-6 w-6 text-orange-500 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold text-slate-800 mb-1">Phone</h3>
-                  <p className="text-gray-600">+356 XXXX XXXX</p>
+                  <p className="text-gray-600">+356 9939 9193</p>
                 </div>
               </div>
 
