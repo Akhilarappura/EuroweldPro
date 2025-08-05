@@ -176,7 +176,7 @@ export default function EuroWeldProWebsite() {
             </div>
             <div className="relative order-1 lg:order-2">
               <Image
-                src="/pic.webp"
+                src="/pic10.jpg"
                 alt="Professional welders at work"
                 width={800}
                 height={600}
@@ -643,7 +643,7 @@ export default function EuroWeldProWebsite() {
             </div>
             <div className="order-1 lg:order-2">
               <Image
-                src="/pic.webp"
+                src="/pic1.jpg"
                 alt="Professional team"
                 width={600}
                 height={500}
@@ -693,7 +693,7 @@ export default function EuroWeldProWebsite() {
                 <Mail className="h-5 w-5 sm:h-6 sm:w-6 text-orange-500 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold text-slate-800 mb-1 text-sm sm:text-base">Email</h3>
-                  <p className="text-gray-600 text-sm sm:text-base">info@euroweldpro.com</p>
+                  <p className="text-gray-600 text-sm sm:text-base">Profitech@eagleworldlimited.com</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
